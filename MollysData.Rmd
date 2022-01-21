@@ -1,0 +1,27 @@
+---
+title: "Mollys Data"
+author: "Dr K"
+output: 
+  html_document:
+    number_sections: true
+    toc: true
+    toc_depth: 5
+date: "`r Sys.Date()`" 
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+require(tigerstats)
+require(tidyverse)
+Mdata <- read.csv(file="MollysData.csv")
+Mdata <- Mdata %>%
+mutate(across(where(is.character), as.factor))
+
+```
+
+## A Replace the pairs plot with appropriate graphical display as you analyze todays problem.
+
+```{r}
+pairs(Mdata)
+```
+
